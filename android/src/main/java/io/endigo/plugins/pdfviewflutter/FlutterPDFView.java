@@ -132,7 +132,7 @@ public class FlutterPDFView implements PlatformView, MethodCallHandler {
     void getCurrentPage(Result result) {
         result.success(pdfView.getCurrentPage());
     }
-    List getBookmark(Result result) {
+    ArrayList getBookmark(Result result) {
         // print(pdfView.getTableOfContents());
         result.success(pdfView.getTableOfContents());
     }

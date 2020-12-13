@@ -291,6 +291,11 @@ class PDFViewController {
     return currentPage;
   }
 
+  Future<List> getBookmark() async {
+    final List bookmark = await _channel.invokeMethod('bookmark');
+    return bookmark;
+  }
+
   Future<bool> setPage(int page) async {
     final bool isSet = await _channel.invokeMethod('setPage', <String, dynamic>{
       'page': page,

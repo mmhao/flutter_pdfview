@@ -110,6 +110,9 @@ public class FlutterPDFView implements PlatformView, MethodCallHandler {
             case "currentPage":
                 getCurrentPage(result);
                 break;
+            case "bookmark":
+                getBookmark(result);
+            break;
             case "setPage":
                 setPage(methodCall, result);
                 break;
@@ -128,6 +131,10 @@ public class FlutterPDFView implements PlatformView, MethodCallHandler {
 
     void getCurrentPage(Result result) {
         result.success(pdfView.getCurrentPage());
+    }
+    List getBookmark(Result result) {
+        // print(pdfView.getTableOfContents());
+        result.success(pdfView.getTableOfContents());
     }
 
     void setPage(MethodCall call, Result result) {
